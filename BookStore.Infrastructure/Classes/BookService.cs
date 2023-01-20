@@ -4,14 +4,12 @@ using BookStore.Data.Repositories.Interfaces;
 using BookStore.Infrastructure.Interfaces;
 using BookStore.Shared;
 using BookStore.Shared.Dto;
-using System.Linq;
 
 namespace BookStore.Infrastructure.Classes
 {
     public class BookService : IBookService
     {
         private readonly IGenericRepository<Book> _genericRepositoryBook;
-        private readonly IGenericRepository<Category> _genericRepositoryCategory;
         private readonly IGenericRepository<BookCategory> _genericRepositoryBookCategory;
         private readonly ICategoryRepository _categoryRepository;
         private readonly IBookRepository _bookRepository;
@@ -27,7 +25,6 @@ namespace BookStore.Infrastructure.Classes
             IMapper mapper)
         {
             _genericRepositoryBook = genericRepositoryBook;
-            _genericRepositoryCategory = genericRepositoryCategory;
             _genericRepositoryBookCategory = genericRepositoryBookCategory;
             _categoryRepository = categoryRepository;
             _bookRepository = bookRepository;
